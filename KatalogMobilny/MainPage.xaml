@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<!-- content page może mieć tylko 1 potomka -->
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.MainPage">
-
+    <VerticalStackLayout Padding="16" x:Name="MainLayout">
+        <Label Text=" Processor" FontSize="24" FontAutoScalingEnabled="True" FontFamily="verdana" HorizontalOptions="Center" Margin="0,20"/>
+        <Image Source="processor.png" HorizontalOptions="Center"/>
+        <Label Text="cache: 40MB" TextColor="Grey" HorizontalOptions="Center"/>
+        <Label Text="grafika: AMD Radeon™ Graphics" TextColor="Grey" HorizontalOptions="Center"/>
+        <Label Text="cena: 899zł" TextColor="Grey" HorizontalOptions="Center"/>
+        <Label x:Name="EtykietaWyniku" Text="Nic nie wybrano"  HorizontalOptions="Center" Margin="0,20,0,5"/>
+        <Button Text="Wybierz" Clicked="PokazButton"/>
+    </VerticalStackLayout>
+<!--
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -39,5 +49,5 @@
                 SemanticProperties.Description="dot net bot in a submarine number ten" />
         </VerticalStackLayout>
     </ScrollView>
-
+-->
 </ContentPage>

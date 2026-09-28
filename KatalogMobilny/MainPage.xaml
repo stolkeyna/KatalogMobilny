@@ -3,6 +3,30 @@
     <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.MainPage">
+        <!--Całość zamykamy w znaczniku grid-->
+    <Grid>
+        <!--definuijemy ile jest wierszy i kolumn-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--<Po definicjach możemy umieszczac elementy w gridzie-->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text=" Processor" FontSize="24" FontAutoScalingEnabled="True" FontFamily="verdana" HorizontalOptions="Center" Margin="0,20"/>
+        <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Source="processor.png" HorizontalOptions="Center"/>
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="cena: 899zł" TextColor="Grey" HorizontalOptions="Center"/>
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" Text="Nic nie wybrano"  HorizontalOptions="Center" Margin="0,20,0,5"/>
+        <Button Grid.Row="4" Grid.Column="0" Text="Wybierz" Clicked="PokazButton" BackgroundColor="#FF9639"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="Ukryj" Clicked="UkryjButton" BackgroundColor="#FF9639"/>
+    </Grid>
+    <!--
+    
     <VerticalStackLayout Padding="16" x:Name="MainLayout">
             <Label Text=" Processor" FontSize="24" FontAutoScalingEnabled="True" FontFamily="verdana" HorizontalOptions="Center" Margin="0,20"/>
             <Image Source="processor.png" HorizontalOptions="Center"/>
@@ -15,7 +39,6 @@
             <Button Text="Ukryj" Clicked="UkryjButton" BackgroundColor="#FF9639"/>
         </HorizontalStackLayout>
     </VerticalStackLayout>
-<!--
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"

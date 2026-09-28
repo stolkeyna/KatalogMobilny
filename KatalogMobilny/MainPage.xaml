@@ -4,13 +4,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.MainPage">
     <VerticalStackLayout Padding="16" x:Name="MainLayout">
-        <Label Text=" Processor" FontSize="24" FontAutoScalingEnabled="True" FontFamily="verdana" HorizontalOptions="Center" Margin="0,20"/>
-        <Image Source="processor.png" HorizontalOptions="Center"/>
-        <Label Text="cache: 40MB" TextColor="Grey" HorizontalOptions="Center"/>
-        <Label Text="grafika: AMD Radeon™ Graphics" TextColor="Grey" HorizontalOptions="Center"/>
-        <Label Text="cena: 899zł" TextColor="Grey" HorizontalOptions="Center"/>
-        <Label x:Name="EtykietaWyniku" Text="Nic nie wybrano"  HorizontalOptions="Center" Margin="0,20,0,5"/>
-        <Button Text="Wybierz" Clicked="PokazButton"/>
+            <Label Text=" Processor" FontSize="24" FontAutoScalingEnabled="True" FontFamily="verdana" HorizontalOptions="Center" Margin="0,20"/>
+            <Image Source="processor.png" HorizontalOptions="Center"/>
+            <Label Text="cache: 40MB" TextColor="Grey" HorizontalOptions="Center"/>
+            <Label Text="grafika: AMD Radeon™ Graphics" TextColor="Grey" HorizontalOptions="Center"/>
+            <Label Text="cena: 899zł" TextColor="Grey" HorizontalOptions="Center"/>
+            <Label x:Name="EtykietaWyniku" Text="Nic nie wybrano"  HorizontalOptions="Center" Margin="0,20,0,5"/>
+        <HorizontalStackLayout Spacing="50">
+            <Button Text="Wybierz" Clicked="PokazButton" BackgroundColor="#FF9639"/>
+            <Button Text="Ukryj" Clicked="UkryjButton" BackgroundColor="#FF9639"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 <!--
     <ScrollView>

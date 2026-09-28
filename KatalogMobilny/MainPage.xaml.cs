@@ -15,6 +15,10 @@
         {
             EtykietaWyniku.Text = "Wybrano processor";
         }
+        private void UkryjButton(object sender, EventArgs e)
+        {
+            EtykietaWyniku.Text = "Nic nie wybrano";
+        }
 
         //private void OnCounterClicked(object? sender, EventArgs e)
         //{

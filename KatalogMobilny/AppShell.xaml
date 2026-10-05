@@ -5,10 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:KatalogMobilny"
     Title="KatalogMobilny">
-
+<!--Tutaj zmieniamy sobie strone na inna dopóki nie mamy nawigacji-->
     <ShellContent
         Title="KatalogMobilny"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:NewProductPage}"
         Route="MainPage" />
 
 </Shell>

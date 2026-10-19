@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.NewProductPage"
              Title="NewProductPage">
+    <!--
     <VerticalStackLayout Spacing="8" Padding="20">
         <Label 
             Text="Nowy produkt"
@@ -30,4 +31,44 @@
         </HorizontalStackLayout>
         <Button Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56"/>
     </VerticalStackLayout>
+    -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        -->
+        <Label 
+            Grid.Row="0" 
+            Text="Nowy produkt"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"  />
+        <Label 
+            Grid.Row="1"
+            Text="Nazwa"    />
+        <Entry 
+            Grid.Row="2" 
+            x:Name="NazwaEntry" 
+            Placeholder="Wpisz nazwę produktu"  />
+        <Label 
+            Grid.Row="3"
+            Text="Cena"    />
+        <Entry 
+            Grid.Row="4" 
+            x:Name="CenaEntry" 
+            Placeholder="0" 
+            Keyboard="Numeric"/>
+    </Grid>
 </ContentPage>

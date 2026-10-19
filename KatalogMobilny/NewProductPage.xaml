@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.NewProductPage"
              Title="NewProductPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="8" Padding="20">
         <Label 
             Text="Nowy produkt"
             VerticalOptions="Center" 
@@ -28,6 +28,6 @@
             <Switch x:Name="AvailableSwitch" />
             <Label Text="Produkt dostępny" VerticalOptions="Center"/>
         </HorizontalStackLayout>
-        <Button Text="Dodaj produkt"/>
+        <Button Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56"/>
     </VerticalStackLayout>
 </ContentPage>

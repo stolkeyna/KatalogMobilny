@@ -44,31 +44,56 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <!--
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        -->
         <Label 
-            Grid.Row="0" 
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
             Text="Nowy produkt"
             VerticalOptions="Center" 
             HorizontalOptions="Center"  />
         <Label 
             Grid.Row="1"
+            Grid.ColumnSpan="2"
             Text="Nazwa"    />
         <Entry 
-            Grid.Row="2" 
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
             x:Name="NazwaEntry" 
             Placeholder="Wpisz nazwę produktu"  />
         <Label 
             Grid.Row="3"
+            Grid.ColumnSpan="2"
             Text="Cena"    />
         <Entry 
-            Grid.Row="4" 
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
             x:Name="CenaEntry" 
             Placeholder="0" 
             Keyboard="Numeric"/>
+        <Label Grid.Row="5"
+               Grid.ColumnSpan="2"
+               Text="Kategoria" />
+        <Picker Grid.Row="6" Grid.ColumnSpan="2" x:Name="KategoriaPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Procesory</x:String>
+                    <x:String>Płyty główne</x:String>
+                    <x:String>Karty graficzne</x:String>
+                    <x:String>Dyski SSD</x:String>
+                    <x:String>Pamięci RAM</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Switch x:Name="AvailableSwitch" Grid.Row="7" Grid.Column="0"/>
+        <Label Text="Produkt dostępny" VerticalOptions="Center" Grid.Row="7" Grid.Column="1"/>
+        <Button Grid.Row="9" Grid.Column="0" Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="NowyProdukt_Clicked"/>
+        <Button Grid.Row="9" Grid.Column="1" Text="Powrót" MinimumHeightRequest="48" MaximumHeightRequest="56"/>
+        <Label Grid.Row="10" Grid.Column="0" x:Name="EtykietaWyniku2" Text=""/>
+
     </Grid>
 </ContentPage>

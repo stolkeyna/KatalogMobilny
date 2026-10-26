@@ -6,4 +6,10 @@ public partial class NewProductPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private int licznik = 0;
+    private void NowyProdukt_Clicked(object sender, EventArgs e)
+    {
+        licznik++;
+        EtykietaWyniku2.Text = $"Kliknięto {licznik} razy";
+    }
 }

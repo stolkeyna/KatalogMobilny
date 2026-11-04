@@ -25,10 +25,20 @@ public partial class NewProductPage : ContentPage
     }
     private void KtoraKategoria(object sender, EventArgs e)
     {
-        WybranaKategoria.Text = $"Kategoria: {e}";
+        var picker = (Picker)sender;
+        int WybranyIndex = picker.SelectedIndex;
+        WybranaKategoria.Text = $"Kategoria: {(string)picker.ItemsSource[WybranyIndex]}";
     }
-    private void CzyDostepny(object sender, EventArgs e)
+    private void CzyDostepny(object sender, ToggledEventArgs e)
     {
-        DostepnyLabel.Text = "Produkt dostępny";
+        if (e.Value)
+        {
+            DostepnyLabel.Text = "Produkt dostępny";
+        }
+        else
+        {
+            DostepnyLabel.Text = "Produkt Niedostępny";
+        }
+        
     }
 }

@@ -69,4 +69,31 @@ public partial class NewProductPage : ContentPage
         WybranaKategoria.Text = "";
         DostepnyLabel.Text = "";
     }
+
+    private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        Entry s = (Entry)sender;
+        if(double.TryParse(s.Text, out double wartosc))
+        {
+            if (wartosc < 0)
+            {
+                s.BackgroundColor = Colors.Red;
+                return;
+            }
+            else
+            {
+                s.BackgroundColor= Colors.Green;
+            }
+        }
+        if(!double.TryParse(CenaEntry.Text, out double cena))
+        {
+            OpisEntry.Text = "Niepoprawna cena!";
+            return;
+        }
+        if(!int.TryParse(IloscEntry.Text, out int ilosc)){
+            OpisEntry.Text = "Niepoprawna ilosc!";
+            return;
+        }
+        OpisEntry.Text = $"Wartość produktu: {cena * ilosc}";
+    }
 }

@@ -46,9 +46,10 @@
             <RowDefinition Height="auto"/> <!--9-->
             <RowDefinition Height="auto"/> <!--10-->
             <RowDefinition Height="auto"/> <!--11-->
-            <RowDefinition Height="*"/> <!--12-->
-            <RowDefinition Height="auto"/> <!--13-->
+            <RowDefinition Height="auto"/> <!--12-->
+            <RowDefinition Height="*"/> <!--13-->
             <RowDefinition Height="auto"/> <!--14-->
+            <RowDefinition Height="auto"/><!--15-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -79,7 +80,8 @@
             Grid.ColumnSpan="2"
             x:Name="CenaEntry" 
             Placeholder="0" 
-            Keyboard="Numeric"/>
+            Keyboard="Numeric"
+            TextChanged="CenaEntry_TextChanged"/>
         <Label 
             Grid.Row="5"
             Grid.Column="0"
@@ -109,9 +111,11 @@
         <Label Grid.Row="9" Grid.ColumnSpan="2" x:Name="ZnakiNazwy" Text=""/>
         <Label Grid.Row="10" Grid.ColumnSpan="2" x:Name="WybranaKategoria" Text=""/>
         <Label Grid.Row="11" Grid.ColumnSpan="2" x:Name="DostepnyLabel" Text=""/>
-        <Button Grid.Row="13" Grid.Column="0" Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="NowyProdukt_Clicked"/>
-        <Button Grid.Row="13" Grid.Column="1" Text="Powrót" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="Powrot_Clicked"/>
-        <Label Grid.Row="14" Grid.Column="0" x:Name="EtykietaWyniku2" Text=""/>
+        <Label Grid.Row="12" Grid.Column="0" x:Name="OpisLabel" Text=""/>
+        <Entry Grid.Row="12" Grid.Column="1" x:Name="OpisEntry" Placeholder="Wpisz opis"/>
+        <Button Grid.Row="14" Grid.Column="0" Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="NowyProdukt_Clicked"/>
+        <Button Grid.Row="14" Grid.Column="1" Text="Powrót" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="Powrot_Clicked"/>
+        <Label Grid.Row="15" Grid.Column="0" x:Name="EtykietaWyniku2" Text=""/>
 
     </Grid>
 </ContentPage>

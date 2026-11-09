@@ -55,10 +55,23 @@ public partial class NewProductPage : ContentPage
         EtykietaWyniku.Text = $"Nazwa ma {iloscZnakow} znaków";
     }
     //TODO: oprogramuj drugi guzik w taki sposób żeby resetował licznik i wyświetlał w etykiecie "Kliknięto 0 razy"
-    private void Reset_Clicked(object sender, EventArgs e)
+    private async Task Reset_Clicked(object sender, EventArgs e)
     {
-        licznik = 0;
-        EtykietaWyniku.Text = $"Kliknięto {licznik} razy";
+        var button = (Button)sender;
+        button.BackgroundColor = Colors.Indigo;
+
+        NazwaEntry.Text = "";
+        KategoriaPicker.SelectedItem = null;
+        CenaEntry.Text = "";
+        CenaEntry.BackgroundColor = Colors.White;
+        IloscEntry.Text = "";
+        IloscEntry.BackgroundColor = Colors.White;
+        EtykietaWartosc.Text = "";
+        EtykietaWyniku.Text = "";
+
+        //oczekiwanie przed tym jak wrucić kolor buttonu
+        await Task.Delay(100);
+        button.BackgroundColor = Colors.Primary;
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)

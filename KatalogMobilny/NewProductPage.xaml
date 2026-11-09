@@ -32,70 +32,35 @@
         <Button Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56"/>
     </VerticalStackLayout>
     -->
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/> <!--0-->
-            <RowDefinition Height="auto"/> <!--1-->
-            <RowDefinition Height="auto"/> <!--2-->
-            <RowDefinition Height="auto"/> <!--3-->
-            <RowDefinition Height="auto"/> <!--4-->
-            <RowDefinition Height="auto"/> <!--5-->
-            <RowDefinition Height="auto"/> <!--6-->
-            <RowDefinition Height="auto"/> <!--7-->
-            <RowDefinition Height="auto"/> <!--8-->
-            <RowDefinition Height="auto"/> <!--9-->
-            <RowDefinition Height="auto"/> <!--10-->
-            <RowDefinition Height="auto"/> <!--11-->
-            <RowDefinition Height="auto"/> <!--12-->
-            <RowDefinition Height="*"/> <!--13-->
-            <RowDefinition Height="auto"/> <!--14-->
-            <RowDefinition Height="auto"/><!--15-->
-        </Grid.RowDefinitions>
+    <Grid Padding="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label 
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="24" FontAttributes="Bold"
             Text="Nowy produkt"
             VerticalOptions="Center" 
-            HorizontalOptions="Center"  />
-        <Label 
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Text="Nazwa"    />
-        <Entry 
-            Grid.Row="2"
-            Grid.ColumnSpan="2"
-            x:Name="NazwaEntry" 
-            Placeholder="Wpisz nazwę produktu"
-            TextChanged = "IleZnakow"/>
-        <Label 
-            Grid.Row="3"
-            Grid.ColumnSpan="2"
-            Text="Cena"    />
-        <Entry 
-            Grid.Row="4"
-            Grid.ColumnSpan="2"
-            x:Name="CenaEntry" 
-            Placeholder="0" 
-            Keyboard="Numeric"
-            TextChanged="CenaEntry_TextChanged"/>
-        <Label 
-            Grid.Row="5"
-            Grid.Column="0"
-            Text="Ilosc"    />
-        <Entry 
-            Grid.Row="5"
-            Grid.Column="2"
-            x:Name="IloscEntry" 
-            Placeholder="0" 
-            Keyboard="Numeric"/>
-        <Label Grid.Row="6"
-               Grid.ColumnSpan="2"
-               Text="Kategoria" />
-        <Picker Grid.Row="7" Grid.ColumnSpan="2" x:Name="KategoriaPicker" SelectedIndexChanged="KtoraKategoria"	>
+            HorizontalOptions="Center" />
+        <Label Text="Nazwa" Grid.Row="1" Grid.Column="0"/>
+        <Entry Grid.Row="1" Grid.Column="1" x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" TextChanged="NazwaEntry_TextChanged" />
+        <Label Grid.Row="2" Grid.Column="0" Text="Cena" />
+        <Entry Grid.Row="2" Grid.Column="1" x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
+        <Label Grid.Row="3" Grid.Column="0" Text="Ilość"/>
+        <Entry Grid.Row="3" Grid.Column="1" x:Name="IloscEntry" Placeholder="0" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
+        <Label Grid.Row="4" Grid.Column="0" Text="Kategoria"/>
+        <Picker Grid.Row="4" Grid.Column="1" x:Name="KategoriaPicker" SelectedIndexChanged="KategoriaPicker_SelectedIndexChanged">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Procesory</x:String>
@@ -106,16 +71,15 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Switch x:Name="AvailableSwitch" Grid.Row="8" Grid.Column="0" HorizontalOptions="Center" Toggled="CzyDostepny"/>
-        <Label Text="Produkt dostępny" VerticalOptions="Center" Grid.Row="8" Grid.Column="1" HorizontalOptions="Center"/>
-        <Label Grid.Row="9" Grid.ColumnSpan="2" x:Name="ZnakiNazwy" Text=""/>
-        <Label Grid.Row="10" Grid.ColumnSpan="2" x:Name="WybranaKategoria" Text=""/>
-        <Label Grid.Row="11" Grid.ColumnSpan="2" x:Name="DostepnyLabel" Text=""/>
-        <Label Grid.Row="12" Grid.Column="0" x:Name="OpisLabel" Text=""/>
-        <Entry Grid.Row="12" Grid.Column="1" x:Name="OpisEntry" Placeholder="Wpisz opis"/>
-        <Button Grid.Row="14" Grid.Column="0" Text="Dodaj produkt" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="NowyProdukt_Clicked"/>
-        <Button Grid.Row="14" Grid.Column="1" Text="Powrót" MinimumHeightRequest="48" MaximumHeightRequest="56" Clicked="Powrot_Clicked"/>
-        <Label Grid.Row="15" Grid.Column="0" x:Name="EtykietaWyniku2" Text=""/>
+
+        <Switch Grid.Row="5" Grid.Column="0" x:Name="AvailableSwitch" HorizontalOptions="Start" Toggled="AvailableSwitch_Toggled"/>
+        <Label Grid.Row="5" Grid.Column="1" Text="Produkt dostępny" VerticalOptions="Center" x:Name="AvailableLabel"/>
+        <Label Grid.Row="6" Grid.Column="0" Text="Opis" x:Name="EtykietaWartosc"/>
+        <!-- tu wyświetlamy info o zmianach -->
+        <Button Grid.Row="8" Grid.Column="0" Text="Dodaj produkt" Clicked="NowyProdukt_Clicked"/>
+        <Button Grid.Row="8" Grid.Column="1" Text="Reset" Clicked="Reset_Clicked"/>
+
+        <Label Grid.Row="9" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" Text=""/>
 
     </Grid>
 </ContentPage>

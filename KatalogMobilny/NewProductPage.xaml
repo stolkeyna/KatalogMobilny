@@ -56,9 +56,9 @@
         <Label Text="Nazwa" Grid.Row="1" Grid.Column="0"/>
         <Entry Grid.Row="1" Grid.Column="1" x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" TextChanged="NazwaEntry_TextChanged" />
         <Label Grid.Row="2" Grid.Column="0" Text="Cena" />
-        <Entry Grid.Row="2" Grid.Column="1" x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
+        <Entry Grid.Row="2" Grid.Column="1" x:Name="CenaEntry" Placeholder="Wpisz cenę" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
         <Label Grid.Row="3" Grid.Column="0" Text="Ilość"/>
-        <Entry Grid.Row="3" Grid.Column="1" x:Name="IloscEntry" Placeholder="0" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
+        <Entry Grid.Row="3" Grid.Column="1" x:Name="IloscEntry" Placeholder="Wpisz ilość" Keyboard="Numeric" TextChanged="CenaEntry_TextChanged" />
         <Label Grid.Row="4" Grid.Column="0" Text="Kategoria"/>
         <Picker Grid.Row="4" Grid.Column="1" x:Name="KategoriaPicker" SelectedIndexChanged="KategoriaPicker_SelectedIndexChanged">
             <Picker.ItemsSource>
@@ -76,10 +76,10 @@
         <Label Grid.Row="5" Grid.Column="1" Text="Produkt dostępny" VerticalOptions="Center" x:Name="AvailableLabel"/>
         <Label Grid.Row="6" Grid.Column="0" Text="Opis" x:Name="EtykietaWartosc"/>
         <!-- tu wyświetlamy info o zmianach -->
-        <Button Grid.Row="8" Grid.Column="0" Text="Dodaj produkt" Clicked="NowyProdukt_Clicked"/>
-        <Button Grid.Row="8" Grid.Column="1" Text="Reset" Clicked="Reset_Clicked"/>
+        <Button Grid.Row="8" Grid.Column="0" Text="Dodaj produkt" Clicked="NowyProdukt_Clicked" MinimumHeightRequest="48" Margin="8"/>
+        <Button Grid.Row="8" Grid.Column="1" Text="Reset" Clicked="Reset_Clicked" MinimumHeightRequest="48" Margin="8"/>
 
-        <Label Grid.Row="9" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" Text=""/>
+        <Label Grid.Row="9" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" Text="" FontSize="18"/>
 
     </Grid>
 </ContentPage>

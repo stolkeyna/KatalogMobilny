@@ -34,14 +34,14 @@ public partial class NewProductPage : ContentPage
         string? nazwa = NazwaEntry.Text;
         if (string.IsNullOrWhiteSpace(nazwa))
         {
-            EtykietaWyniku.Text = "Niepoprawna nazwa!"; //wyświetlamy komunikat o błędzie
-            return; //wychodzimy z metody, nie wykonujemy dalszych instrukcji
+            EtykietaWyniku.Text = "Niepoprawna nazwa!";
+            return;
         }
         //na koniec sprawdzamy czy wybrano kategorię
         if (KategoriaPicker.SelectedItem == null)
         {
-            EtykietaWyniku.Text = "Nie wybrano kategorii!"; //wyświetlamy komunikat o błędzie
-            return; //wychodzimy z metody, nie wykonujemy dalszych instrukcji
+            EtykietaWyniku.Text = "Nie wybrano kategorii!";
+            return;
         }
         //wszystko sprawdzone - wyswietlamy wynik
         EtykietaWyniku.Text = $"Produkt: {nazwa}, cena: {cena}, ilość: {ilosc}, " +
@@ -54,12 +54,10 @@ public partial class NewProductPage : ContentPage
         int iloscZnakow = tekst.Length;
         EtykietaWyniku.Text = $"Nazwa ma {iloscZnakow} znaków";
     }
-    //TODO: oprogramuj drugi guzik w taki sposób żeby resetował licznik i wyświetlał w etykiecie "Kliknięto 0 razy"
-    private async Task Reset_Clicked(object sender, EventArgs e)
+
+    private void Reset_Clicked(object sender, EventArgs e)
     {
         var button = (Button)sender;
-        button.BackgroundColor = Colors.Indigo;
-
         NazwaEntry.Text = "";
         KategoriaPicker.SelectedItem = null;
         CenaEntry.Text = "";
@@ -69,9 +67,6 @@ public partial class NewProductPage : ContentPage
         EtykietaWartosc.Text = "";
         EtykietaWyniku.Text = "";
 
-        //oczekiwanie przed tym jak wrucić kolor buttonu
-        await Task.Delay(100);
-        button.BackgroundColor = Colors.Primary;
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
